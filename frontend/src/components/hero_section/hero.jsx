@@ -292,29 +292,30 @@ const Hero = () => {
   };
 
   const completeEnroll = () => {
-    const name = form.name.trim() || "Demo User";
-    const email = form.email.trim() || "demo@example.com";
-    const coupon = form.coupon.trim().toUpperCase();
-    const discount = coupons[coupon] || 0;
-    const final = Math.round(selectedCourse.price * (1 - discount));
+    // const name = form.name.trim() || "Demo User";
+    // const email = form.email.trim() || "demo@example.com";
+    // const coupon = form.coupon.trim().toUpperCase();
+    // const discount = coupons[coupon] || 0;
+    // const final = Math.round(selectedCourse.price * (1 - discount));
 
-    const newEnroll = {
-      title: selectedCourse.title,
-      name,
-      email,
-      price: selectedCourse.price,
-      coupon: coupon || null,
-      final,
-      date: new Date().toISOString(),
-      progress: Math.floor(Math.random() * 50) + 10,
-    };
+    // const newEnroll = {
+    //   title: selectedCourse.title,
+    //   name,
+    //   email,
+    //   price: selectedCourse.price,
+    //   coupon: coupon || null,
+    //   final,
+    //   date: new Date().toISOString(),
+    //   progress: Math.floor(Math.random() * 50) + 10,
+    // };
 
-    const updated = [...enrollments, newEnroll];
-    setEnrollments(updated);
-    localStorage.setItem("hack_enrolls", JSON.stringify(updated));
+    // const updated = [...enrollments, newEnroll];
+    // setEnrollments(updated);
+    // localStorage.setItem("hack_enrolls", JSON.stringify(updated));
 
-    alert(`Enrollment successful — ₹${final}. Check Dashboard.`);
-    setShowEnroll(false);
+    // alert(`Enrollment successful — ₹${final}. Check Dashboard.`);
+    // setShowEnroll(false);
+    alert("go to course section for enroll");
   };
 
   

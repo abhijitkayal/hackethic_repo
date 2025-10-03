@@ -35,7 +35,21 @@ const Navbar = () => {
             menuOpen ? "block " : "hidden lg:flex"
           }`}
         >
-          <li>
+          
+          {/* Auth */}
+          <SignedOut>
+            <Link to="/login" className="block nav-link px-2 py-2 text-white" onClick={() => setMenuOpen(false)}>
+              Login
+            </Link>
+            <Link to="/signup" className="block nav-link px-2 py-2 text-white" onClick={() => setMenuOpen(false)}>
+              Sign Up
+            </Link>
+            
+          </SignedOut>
+          <SignedIn>
+
+
+            <li>
             <Link to="/" className="block px-2 py-2 nav-link text-white " onClick={() => setMenuOpen(false)}>
               Home
             </Link>
@@ -67,19 +81,11 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/dashboard" className="block px-2 py-2 nav-link text-white" onClick={() => setMenuOpen(false)}>
-              dashboard
+              Dashboard
             </Link>
           </li>
-          {/* Auth */}
-          <SignedOut>
-            <Link to="/login" className="block nav-link px-2 py-2 text-white" onClick={() => setMenuOpen(false)}>
-              Login
-            </Link>
-            <Link to="/signup" className="block nav-link px-2 py-2 text-white" onClick={() => setMenuOpen(false)}>
-              Sign Up
-            </Link>
-          </SignedOut>
-          <SignedIn>
+
+
             <li className="px-4 py-2">
               <UserButton afterSignOutUrl="/" />
             </li>
@@ -111,37 +117,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-            {/* <SignedIn>
-    <UserButton/>
-            </SignedIn>
-            <SignedOut>
-     <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Sign In
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/signup">
-                Sign Up
-              </Link>
-            </li>
-            </SignedOut>  */}
-              {/* <SignedOut>
-                <SignInButton 
-                className="text-white"
-                to="/login"
-                  afterSignInUrl="/dashboard"
-                  afterSignUpUrl="/dashboard"
-                />
-              </SignedOut>
-              <SignedIn>
-                <UserButton afterSignOutUrl="/" />
-              </SignedIn> */}
